@@ -3,7 +3,7 @@
  */
 
 #include <systemc.h>
-#include "../Bus.cpp"
+#include "Bus.hpp"
 
 
 using namespace std;

@@ -13,7 +13,9 @@ include_directories(${SOURCE_DIR})
 file(GLOB SOURCE_HPP "${SOURCE_DIR}/*.hpp")
 file(GLOB SOURCE_CPP "${SOURCE_DIR}/*.cpp")
 
-file(GLOB MAIN_CPP "test/Micro-test.cpp")
+# Modify here to specify the cpp file you want to run, 
+# which needs to contain the main or sc_main function.
+file(GLOB MAIN_CPP "main.cpp")
 
 set(SYSTEMC_INCLUDE_DIR "/usr/local/include")
 set(SYSTEMC_LIBRARY_DIR "/usr/local/lib64")

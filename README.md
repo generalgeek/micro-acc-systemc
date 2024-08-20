@@ -1,49 +1,46 @@
 # micro-acc-systemc
-> simulating connection of micro processor and accelerator on a bus context with systemc language 
+> simulating connection of micro processor and accelerator on a bus context with SystemC library 
 
-![micro-acc-systemc image](./assets/micro-acc-systemc.png)
+![micro-acc-systemc image](./doc/micro-acc-systemc.png)
 
 <hr />
 
-*
-*   @ASCK-TEAM
-*
 
 ## Getting Started
 This repository exposed here, is actually a university project of the course `hardware software co-design`
 
-And implemented with `SystemC` language.
+And implemented with `SystemC` library.
+
+- ### Build and Run
+  - You can execute **./build.sh** to compile this project, and then execute **./run.sh** to run the program.
+
+  - Perhaps you need to modify the content of **Cmakelists.txt** appropriately according to your environment.
+
+  - The configuration files in the .vscode directory can help you to debug this project in VSCode.
 
 - ### Prerequisites
   - #### Installing SystemC
   
     SystemC is a set of C++ classes and macros which provide an event-driven simulation interface.
     
-    You can see the ***SystemC installation*** documentation for each one:
-    
-      - [linux](http://blog.brilacasck.ir/index.php/2018/07/18/how-to-easily-install-system-c-on-ubuntu/)
-      - mac()
-      - windows()
-      
-  - #### Installing GtkWave
-    
-    Gtkwave is a software for displaying signals simulation in a wave figure.
-    
-    You can produce a **.vcd** output file via systemc
-    Then you can open it via gtkwave software and watch the simulation.
-    
-    Download gtkwave in ***Ubuntu*** by using:
-    
-    <pre> sudo apt install gtkwave </pre>
+    Download SystemC from [here](https://github.com/accellera-official/systemc/tags), then execute the following command on Linux to install.
+    ```
+    cd systemc-2.3.3
+    mkdir build
+    cd systemc-2.3.3/build
+    cmake .. -DCMAKE_CXX_STANDARD=11 -DCMAKE_INSTALL_PREFIX=/usr/local
+    make -j
+    sudo make install
+    ```
     
 - ### Subject
   - #### Problem
     
-    You can figure it out what the project exactly is about here: [project description](./assets/hw-sw_project-description.pdf)
+    You can figure it out what the project exactly is about here: [project description](./doc/hw-sw_project-description.pdf)
     
   - #### Solution
     
-    You can see the design, architecture and the datapath of this project here: [project-design](./assets/HWSW-PROJECT-ISA.pdf) 
+    You can see the design, architecture and the datapath of this project here: [project-design](./doc/HWSW-PROJECT-ISA.pdf) 
     
 <hr />
 <hr />
@@ -175,44 +172,10 @@ The hierarchy display of the modules is demonstrated here:
 
 ## Results
 
-To display the wave form results, you must **compile** the `main.cpp` file via **systemc compilation command**, you can use this [documentation](http://blog.brilacasck.ir/index.php/2018/07/18/how-to-easily-install-system-c-on-ubuntu/)
+You can install the **WaveTrace** plugin in VSCode, then open the .vcd file generated after running the program to see the waveform effect.
 
-When compilation finished, a .vcd file will be created, named `project.vcd` in the root path of repository.
+![waveform](./doc/vcd_waveform.png)
 
-You can open this file via gtkwave software.
-
-In Ubuntu go to the primary folder in which <i>project.vcd</i> file is created and run this command:
-
-<pre> gtkvawe project.vcd </pre>
-
-A window will be opened by gtkwave. now you need to select SystemC branch in the left sub window. the input and output signals which were declared in main.cpp will be shown beneath the sub window.
-
-You can drag each signal and drop them to the `Signals` sub window for displaying the wave.
-
-If everything goes correct, your output would be like this: 
-
-![wave-result](./assets/hw-sw_project_wave.png)
-
-Don't remember to zoom out the waves sub window! 
-
-<hr />
-
-## Authors
-
-  - Alireza Kavian ( [@alirezakay](https://github.com/alirezakay) )
-  - Soheil Changizi ( [@cocolico14](https://github.com/cocolico14) )
-  
-## Org.
-
-  - ***[Brilacasck](https://brilacasck.ir)*** 
-  
-## Team
-  
-  - ***ASCK TEAM***
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
 
 
 

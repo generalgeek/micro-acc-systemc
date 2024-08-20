@@ -49,7 +49,7 @@ int sc_main(int argc, char* argv[]) {
   cout << "testing" << endl;
 
   // 10 clock cycles
-  sc_start(10, SC_NS);
+  sc_start(100, SC_NS);
 
   sc_close_vcd_trace_file(wf);
 
